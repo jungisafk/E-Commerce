@@ -216,4 +216,93 @@ try {
                                                         <?php echo ucfirst($order['status']); ?>
                                                     </span>
                                                 </td>
-                                                <td style="padding
+
+                                                <td style="padding: 15px;"><?php echo $order['item_count']; ?> items</td>
+                                                <td style="padding: 15px;">$<?php echo number_format($order['total'], 2); ?></td>
+                                                <td style="padding: 15px;">
+                                                    <a href="order-details.php?id=<?php echo $order['id']; ?>" class="btn btn-sm">View</a>
+                                                </td>
+                                                </tr>
+                            <?php endforeach; ?>
+                                </tbody>
+                                    </table>
+                                        </div>
+                            <?php endif; ?>
+                                        </div>
+                                <?php if (!empty($wishlist_items)): ?>
+                                <div class="wishlist-preview" style="margin-top: 40px;">
+                                    <h2 class="section-title">Wishlist</h2>
+                                    <div class="product-grid">
+                                        <?php foreach ($wishlist_items as $product): ?>
+                                            <div class="product-card">
+                                                <div class="product-image">
+                                                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h3>
+                                                    <div class="product-price">
+                                                        <?php if ($product['sale_price']): ?>
+                                                            <span class="price-old">$<?php echo number_format($product['price'], 2); ?></span>
+                                                            <span class="price-current">$<?php echo number_format($product['sale_price'], 2); ?></span>
+                                                        <?php else: ?>
+                                                            <span class="price-current">$<?php echo number_format($product['price'], 2); ?></span>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="product-actions">
+                                                        <a href="product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm">View</a>
+                                                        <a href="cart.php?add=<?php echo $product['id']; ?>" class="btn btn-sm">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div style="text-align: center; margin-top: 20px;">
+                                        <a href="wishlist.php" class="btn">View All Wishlist Items</a>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+
+                                <?php if (!empty($recently_viewed_products)): ?>
+                                <div class="recently-viewed" style="margin-top: 40px;">
+                                    <h2 class="section-title">Recently Viewed</h2>
+                                    <div class="product-grid">
+                                        <?php foreach ($recently_viewed_products as $product): ?>
+                                            <div class="product-card">
+                                                <div class="product-image">
+                                                    <img src="<?php echo htmlspecialchars($product['image']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                                </div>
+                                                <div class="product-info">
+                                                    <h3 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h3>
+                                                    <div class="product-price">
+                                                        <?php if ($product['sale_price']): ?>
+                                                            <span class="price-old">$<?php echo number_format($product['price'], 2); ?></span>
+                                                            <span class="price-current">$<?php echo number_format($product['sale_price'], 2); ?></span>
+                                                        <?php else: ?>
+                                                            <span class="price-current">$<?php echo number_format($product['price'], 2); ?></span>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="product-actions">
+                                                        <a href="product.php?id=<?php echo $product['id']; ?>" class="btn btn-sm">View</a>
+                                                        <a href="cart.php?add=<?php echo $product['id']; ?>" class="btn btn-sm">Add to Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+
+                                </div>
+                                </div>
+                                </div>
+                                </main>
+        <!-- Newsletter Section -->
+        <?php include 'includes/newsletter.php'; ?>
+
+        <!-- Footer -->
+        <?php include 'includes/footer.php'; ?>
+
+            <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+    </body>
+</html>

@@ -10,26 +10,26 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
+            <div class="logo"><a href="index.php" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
             
             <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 ☰
             </div>
             
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="men.html">Men</a>
-                <a href="women.html" class="active">Women</a>
-                <a href="kids.html">Kids</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="sale.html">Sale</a>
+                <a href="index.php">Home</a>
+                <a href="men.php">Men</a>
+                <a href="women.php" class="active">Women</a>
+                <a href="kids.php">Kids</a>
+                <a href="accessories.php">Accessories</a>
+                <a href="sale.php">Sale</a>
             </nav>
             
             <div class="header-icons">
                 <div class="icon search-icon" onclick="toggleSearchBar()">🔍</div>
-                <div class="icon" onclick="window.location.href='account.html'">👤</div>
+                <div class="icon" onclick="window.location.href='account.php'">👤</div>
                 <div class="icon">💖</div>
-                <div class="icon" onclick="window.location.href='cart.html'">
+                <div class="icon" onclick="window.location.href='cart.php'">
                     🛒
                     <span class="cart-count">3</span>
                 </div>
@@ -39,7 +39,7 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <div class="container">
-                <form id="search-form" action="search.html" method="get">
+                <form id="search-form" action="search.php" method="get">
                     <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                     <button type="submit" class="search-btn">Search</button>
                     <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -189,7 +189,7 @@
         
         <div class="shop-products grid-view" id="women-products">
             <!-- Women's Products -->
-            <div class="product" onclick="window.location.href='product-details.html?id=2'">
+            <div class="product" onclick="window.location.href='product-details.php?id=2'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Floral Summer Dress">
                 </div>
@@ -206,7 +206,7 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=9'">
+            <div class="product" onclick="window.location.href='product-details.php?id=9'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Women's Yoga Pants">
                 </div>
@@ -223,7 +223,7 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=11'">
+            <div class="product" onclick="window.location.href='product-details.php?id=11'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Women's Winter Coat">
                 </div>
@@ -240,7 +240,7 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=15'">
+            <div class="product" onclick="window.location.href='product-details.php?id=15'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Women's Blouse">
                 </div>
@@ -257,7 +257,7 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=16'">
+            <div class="product" onclick="window.location.href='product-details.php?id=16'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Women's Maxi Skirt">
                 </div>
@@ -274,7 +274,7 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=17'">
+            <div class="product" onclick="window.location.href='product-details.php?id=17'">
                 <div class="product-image">
                     <img src="/placeholder.svg?height=300&width=250" alt="Women's Cardigan">
                 </div>
@@ -324,12 +324,12 @@
                 <div class="footer-column">
                     <h3>Shopping</h3>
                     <ul class="footer-links">
-                        <li><a href="men.html">Men's Clothing</a></li>
-                        <li><a href="women.html">Women's Clothing</a></li>
-                        <li><a href="kids.html">Kid's Clothing</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="sale.html">Sale</a></li>
+                        <li><a href="men.php">Men's Clothing</a></li>
+                        <li><a href="women.php">Women's Clothing</a></li>
+                        <li><a href="kids.php">Kid's Clothing</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shop.php">New Arrivals</a></li>
+                        <li><a href="sale.php">Sale</a></li>
                     </ul>
                 </div>
                 

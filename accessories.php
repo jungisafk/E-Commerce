@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kids Collection | FASHION TRENDS</title>
+    <title>Accessories | FASHION TRENDS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
+            <div class="logo"><a href="index.php" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
             
             <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 ☰
             </div>
             
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="men.html">Men</a>
-                <a href="women.html">Women</a>
-                <a href="kids.html" class="active">Kids</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="sale.html">Sale</a>
+                <a href="index.php">Home</a>
+                <a href="men.php">Men</a>
+                <a href="women.php">Women</a>
+                <a href="kids.php">Kids</a>
+                <a href="accessories.php" class="active">Accessories</a>
+                <a href="sale.php">Sale</a>
             </nav>
             
             <div class="header-icons">
                 <div class="icon search-icon" onclick="toggleSearchBar()">🔍</div>
-                <div class="icon" onclick="window.location.href='login.php'">👤</div>
+                <div class="icon" onclick="window.location.href='account.php'">👤</div>
                 <div class="icon">💖</div>
                 <div class="icon" onclick="window.location.href='cart.php'">
                     🛒
@@ -39,7 +39,7 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <div class="container">
-                <form id="search-form" action="search.html" method="get">
+                <form id="search-form" action="search.php" method="get">
                     <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                     <button type="submit" class="search-btn">Search</button>
                     <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -49,11 +49,11 @@
         </div>
     </header>
     
-    <!-- Kids Collection Banner -->
+    <!-- Accessories Banner -->
     <div class="category-banner">
         <div class="container">
-            <h1>Kids Collection</h1>
-            <p>Fun and comfortable clothing for your little ones</p>
+            <h1>Accessories Collection</h1>
+            <p>Complete your look with our stylish accessories</p>
         </div>
     </div>
     
@@ -90,23 +90,27 @@
                         <div class="filter-options">
                             <div class="filter-option">
                                 <input type="checkbox" id="category-all" checked>
-                                <label for="category-all">All Kids Clothing</label>
+                                <label for="category-all">All Accessories</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-boys">
-                                <label for="category-boys">Boys</label>
+                                <input type="checkbox" id="category-bags">
+                                <label for="category-bags">Bags & Purses</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-girls">
-                                <label for="category-girls">Girls</label>
+                                <input type="checkbox" id="category-jewelry">
+                                <label for="category-jewelry">Jewelry</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-toddlers">
-                                <label for="category-toddlers">Toddlers</label>
+                                <input type="checkbox" id="category-hats">
+                                <label for="category-hats">Hats & Caps</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-babies">
-                                <label for="category-babies">Babies</label>
+                                <input type="checkbox" id="category-shoes">
+                                <label for="category-shoes">Shoes</label>
+                            </div>
+                            <div class="filter-option">
+                                <input type="checkbox" id="category-belts">
+                                <label for="category-belts">Belts</label>
                             </div>
                         </div>
                     </div>
@@ -119,20 +123,20 @@
                                 <label for="price-all">All Prices</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-0-25">
-                                <label for="price-0-25">$0 - $25</label>
+                                <input type="checkbox" id="price-0-50">
+                                <label for="price-0-50">$0 - $50</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-25-50">
-                                <label for="price-25-50">$25 - $50</label>
+                                <input type="checkbox" id="price-50-100">
+                                <label for="price-50-100">$50 - $100</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-50-75">
-                                <label for="price-50-75">$50 - $75</label>
+                                <input type="checkbox" id="price-100-200">
+                                <label for="price-100-200">$100 - $200</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-75-plus">
-                                <label for="price-75-plus">$75+</label>
+                                <input type="checkbox" id="price-200-plus">
+                                <label for="price-200-plus">$200+</label>
                             </div>
                         </div>
                         
@@ -148,37 +152,11 @@
                         <div class="color-options">
                             <div class="color-option color-black" title="Black"></div>
                             <div class="color-option color-white" title="White"></div>
+                            <div class="color-option color-brown" title="Brown" style="background-color: brown;"></div>
                             <div class="color-option color-red" title="Red"></div>
                             <div class="color-option color-blue" title="Blue"></div>
-                            <div class="color-option color-green" title="Green"></div>
-                            <div class="color-option color-yellow" title="Yellow" style="background-color: yellow;"></div>
-                            <div class="color-option color-pink" title="Pink" style="background-color: pink;"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Age</h3>
-                        <div class="filter-options">
-                            <div class="filter-option">
-                                <input type="checkbox" id="age-0-2">
-                                <label for="age-0-2">0-2 Years</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="age-3-5">
-                                <label for="age-3-5">3-5 Years</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="age-6-8">
-                                <label for="age-6-8">6-8 Years</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="age-9-12">
-                                <label for="age-9-12">9-12 Years</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="age-13-16">
-                                <label for="age-13-16">13-16 Years</label>
-                            </div>
+                            <div class="color-option color-gold" title="Gold" style="background-color: gold;"></div>
+                            <div class="color-option color-silver" title="Silver" style="background-color: silver;"></div>
                         </div>
                     </div>
                     
@@ -187,67 +165,16 @@
             </div>
         </div>
         
-        <div class="shop-products grid-view" id="kids-products">
-            <!-- Kids Products -->
-            <div class="product" onclick="window.location.href='product-details.html?id=8'">
+        <div class="shop-products grid-view" id="accessories-products">
+            <!-- Accessories Products -->
+            <div class="product" onclick="window.location.href='product-details.php?id=4'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Cartoon T-Shirt">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Casual Sneakers">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Kids Cartoon T-Shirt</h3>
+                    <h3 class="product-name">Casual Sneakers</h3>
                     <div class="product-price">
-                        <div class="current-price">$19.99</div>
-                    </div>
-                    <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=12'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Winter Boots">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Kids Winter Boots</h3>
-                    <div class="product-price">
-                        <div class="current-price">$49.99</div>
-                    </div>
-                    <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=18'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Denim Overalls">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Kids Denim Overalls</h3>
-                    <div class="product-price">
-                        <div class="current-price">$39.99</div>
-                    </div>
-                    <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=19'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Pajama Set">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Kids Pajama Set</h3>
-                    <div class="product-price">
-                        <div class="current-price">$29.99</div>
+                        <div class="current-price">$59.99</div>
                     </div>
                     <div class="product-rating">★★★★★</div>
                     <div class="product-actions">
@@ -257,12 +184,63 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=20'">
+            <div class="product" onclick="window.location.href='product-details.php?id=5'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Raincoat">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Summer Straw Hat">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Kids Colorful Raincoat</h3>
+                    <h3 class="product-name">Summer Straw Hat</h3>
+                    <div class="product-price">
+                        <div class="current-price">$24.99</div>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=7'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Leather Handbag">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Leather Handbag</h3>
+                    <div class="product-price">
+                        <div class="current-price">$89.99</div>
+                    </div>
+                    <div class="product-rating">★★★★★</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=22'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Silver Necklace">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Silver Pendant Necklace</h3>
+                    <div class="product-price">
+                        <div class="current-price">$45.99</div>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=23'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Leather Belt">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Leather Belt</h3>
                     <div class="product-price">
                         <div class="current-price">$34.99</div>
                     </div>
@@ -274,16 +252,16 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=21'">
+            <div class="product" onclick="window.location.href='product-details.php?id=24'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids School Backpack">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Sunglasses">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Kids School Backpack</h3>
+                    <h3 class="product-name">Designer Sunglasses</h3>
                     <div class="product-price">
-                        <div class="current-price">$24.99</div>
+                        <div class="current-price">$79.99</div>
                     </div>
-                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-rating">★★★★★</div>
                     <div class="product-actions">
                         <button class="btn add-to-cart">Add to Cart</button>
                         <div class="wishlist">❤️</div>
@@ -324,12 +302,12 @@
                 <div class="footer-column">
                     <h3>Shopping</h3>
                     <ul class="footer-links">
-                        <li><a href="men.html">Men's Clothing</a></li>
-                        <li><a href="women.html">Women's Clothing</a></li>
-                        <li><a href="kids.html">Kid's Clothing</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="sale.html">Sale</a></li>
+                        <li><a href="men.php">Men's Clothing</a></li>
+                        <li><a href="women.php">Women's Clothing</a></li>
+                        <li><a href="kids.php">Kid's Clothing</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shop.php">New Arrivals</a></li>
+                        <li><a href="sale.php">Sale</a></li>
                     </ul>
                 </div>
                 

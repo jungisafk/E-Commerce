@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItemsContainer.innerHTML = `
                   <div class="empty-cart" style="text-align: center; padding: 40px;">
                       <div style="font-size: 24px; margin-bottom: 20px;">Your cart is empty</div>
-                      <a href="shop.html" class="btn">Continue Shopping</a>
+                      <a href="shop.php" class="btn">Continue Shopping</a>
                   </div>
               `
         return
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const searchBarHTML = `
               <div class="search-bar">
                   <div class="container">
-                      <form id="search-form" action="search.html" method="get">
+                      <form id="search-form" action="search.php" method="get">
                           <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                           <button type="submit" class="search-btn">Search</button>
                           <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
             suggestion.innerHTML = highlightedName
   
             suggestion.addEventListener("click", () => {
-              window.location.href = `product-details.html?id=${product.id}`
+              window.location.href = `product-details.php?id=${product.id}`
             })
   
             searchSuggestions.appendChild(suggestion)
@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.head.appendChild(styleSheet)
   
     // Handle search results page
-    if (window.location.pathname.includes("search.html")) {
+    if (window.location.pathname.includes("search.php")) {
       const urlParams = new URLSearchParams(window.location.search)
       const searchQuery = urlParams.get("q")
   
@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", () => {
             searchResults.forEach((product) => {
               const productElement = document.createElement("div")
               productElement.className = "product"
-              productElement.setAttribute("onclick", `window.location.href='product-details.html?id=${product.id}'`)
+              productElement.setAttribute("onclick", `window.location.href='product-details.php?id=${product.id}'`)
   
               productElement.innerHTML = `
                               <div class="product-image">
@@ -733,15 +733,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const footerLinks = document.querySelectorAll(".footer-links a")
     footerLinks.forEach((link) => {
       if (link.textContent.includes("Men's")) {
-        link.href = "men.html"
+        link.href = "men.php"
       } else if (link.textContent.includes("Women's")) {
-        link.href = "women.html"
+        link.href = "women.php"
       } else if (link.textContent.includes("Kid's")) {
-        link.href = "kids.html"
+        link.href = "kids.php"
       } else if (link.textContent.includes("Accessories")) {
-        link.href = "accessories.html"
+        link.href = "accessories.php"
       } else if (link.textContent.includes("Sale")) {
-        link.href = "sale.html"
+        link.href = "sale.php"
       }
     })
   
@@ -749,7 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const logo = document.querySelector(".logo")
     if (logo && !logo.querySelector("a")) {
       const logoText = logo.innerHTML
-      logo.innerHTML = `<a href="index.html" style="text-decoration: none; color: inherit;">${logoText}</a>`
+      logo.innerHTML = `<a href="index.php" style="text-decoration: none; color: inherit;">${logoText}</a>`
     }
   })
   

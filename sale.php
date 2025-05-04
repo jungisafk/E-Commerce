@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Men's Collection | FASHION TRENDS</title>
+    <title>Sale | FASHION TRENDS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
+            <div class="logo"><a href="index.php" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
             
             <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 ☰
             </div>
             
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="men.html" class="active">Men</a>
-                <a href="women.html">Women</a>
-                <a href="kids.html">Kids</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="sale.html">Sale</a>
+                <a href="index.php">Home</a>
+                <a href="men.php">Men</a>
+                <a href="women.php">Women</a>
+                <a href="kids.php">Kids</a>
+                <a href="accessories.php">Accessories</a>
+                <a href="sale.php" class="active">Sale</a>
             </nav>
             
             <div class="header-icons">
                 <div class="icon search-icon" onclick="toggleSearchBar()">🔍</div>
-                <div class="icon" onclick="window.location.href='login.php'">👤</div>
+                <div class="icon" onclick="window.location.href='account.php'">👤</div>
                 <div class="icon">💖</div>
                 <div class="icon" onclick="window.location.href='cart.php'">
                     🛒
@@ -39,7 +39,7 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <div class="container">
-                <form id="search-form" action="search.html" method="get">
+                <form id="search-form" action="search.php" method="get">
                     <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                     <button type="submit" class="search-btn">Search</button>
                     <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -49,11 +49,29 @@
         </div>
     </header>
     
-    <!-- Men's Collection Banner -->
-    <div class="category-banner">
+    <!-- Sale Banner -->
+    <div class="category-banner sale-banner">
         <div class="container">
-            <h1>Men's Collection</h1>
-            <p>Discover our latest men's fashion for every occasion</p>
+            <h1>SALE</h1>
+            <p>Up to 70% off on selected items</p>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">03</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">12</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">45</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">30</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -72,8 +90,8 @@
                         <option>Featured</option>
                         <option>Price: Low to High</option>
                         <option>Price: High to Low</option>
+                        <option>Discount: High to Low</option>
                         <option>Customer Rating</option>
-                        <option>New Arrivals</option>
                     </select>
                 </div>
                 
@@ -90,23 +108,23 @@
                         <div class="filter-options">
                             <div class="filter-option">
                                 <input type="checkbox" id="category-all" checked>
-                                <label for="category-all">All Men's Clothing</label>
+                                <label for="category-all">All Sale Items</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-shirts">
-                                <label for="category-shirts">Shirts</label>
+                                <input type="checkbox" id="category-men">
+                                <label for="category-men">Men</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-pants">
-                                <label for="category-pants">Pants & Jeans</label>
+                                <input type="checkbox" id="category-women">
+                                <label for="category-women">Women</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-jackets">
-                                <label for="category-jackets">Jackets & Coats</label>
+                                <input type="checkbox" id="category-kids">
+                                <label for="category-kids">Kids</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-activewear">
-                                <label for="category-activewear">Activewear</label>
+                                <input type="checkbox" id="category-accessories">
+                                <label for="category-accessories">Accessories</label>
                             </div>
                         </div>
                     </div>
@@ -144,42 +162,27 @@
                     </div>
                     
                     <div class="filter-group">
-                        <h3>Color</h3>
-                        <div class="color-options">
-                            <div class="color-option color-black" title="Black"></div>
-                            <div class="color-option color-white" title="White"></div>
-                            <div class="color-option color-red" title="Red"></div>
-                            <div class="color-option color-blue" title="Blue"></div>
-                            <div class="color-option color-green" title="Green"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <h3>Size</h3>
+                        <h3>Discount</h3>
                         <div class="filter-options">
                             <div class="filter-option">
-                                <input type="checkbox" id="size-xs">
-                                <label for="size-xs">XS</label>
+                                <input type="checkbox" id="discount-10">
+                                <label for="discount-10">10% Off or More</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="size-s">
-                                <label for="size-s">S</label>
+                                <input type="checkbox" id="discount-20">
+                                <label for="discount-20">20% Off or More</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="size-m">
-                                <label for="size-m">M</label>
+                                <input type="checkbox" id="discount-30">
+                                <label for="discount-30">30% Off or More</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="size-l">
-                                <label for="size-l">L</label>
+                                <input type="checkbox" id="discount-50">
+                                <label for="discount-50">50% Off or More</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="size-xl">
-                                <label for="size-xl">XL</label>
-                            </div>
-                            <div class="filter-option">
-                                <input type="checkbox" id="size-xxl">
-                                <label for="size-xxl">XXL</label>
+                                <input type="checkbox" id="discount-70">
+                                <label for="discount-70">70% Off or More</label>
                             </div>
                         </div>
                     </div>
@@ -189,15 +192,55 @@
             </div>
         </div>
         
-        <div class="shop-products grid-view" id="men-products">
-            <!-- Men's Products -->
-            <div class="product" onclick="window.location.href='product-details.html?id=1'">
+        <div class="shop-products grid-view" id="sale-products">
+            <!-- Sale Products -->
+            <div class="product" onclick="window.location.href='product-details.php?id=25'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Casual Cotton T-Shirt">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Polo Shirt">
+                    <div class="discount-badge">-30%</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Casual Cotton T-Shirt</h3>
+                    <h3 class="product-name">Men's Polo Shirt</h3>
                     <div class="product-price">
+                        <div class="original-price">$39.99</div>
+                        <div class="current-price">$27.99</div>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=26'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Women's Cardigan">
+                    <div class="discount-badge">-40%</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Women's Knit Cardigan</h3>
+                    <div class="product-price">
+                        <div class="original-price">$64.99</div>
+                        <div class="current-price">$38.99</div>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=27'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Sneakers">
+                    <div class="discount-badge">-25%</div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kids Colorful Sneakers</h3>
+                    <div class="product-price">
+                        <div class="original-price">$39.99</div>
                         <div class="current-price">$29.99</div>
                     </div>
                     <div class="product-rating">★★★★☆</div>
@@ -208,48 +251,16 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=3'">
+            <div class="product" onclick="window.location.href='product-details.php?id=28'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Classic Denim Jacket">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Leather Wallet">
+                    <div class="discount-badge">-50%</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Classic Denim Jacket</h3>
+                    <h3 class="product-name">Leather Wallet</h3>
                     <div class="product-price">
-                        <div class="current-price">$79.99</div>
-                    </div>
-                    <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=6'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Slim Fit Jeans">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Slim Fit Jeans</h3>
-                    <div class="product-price">
-                        <div class="current-price">$69.99</div>
-                    </div>
-                    <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=10'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Formal Shirt">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Men's Formal Shirt</h3>
-                    <div class="product-price">
-                        <div class="current-price">$54.99</div>
+                        <div class="original-price">$49.99</div>
+                        <div class="current-price">$24.99</div>
                     </div>
                     <div class="product-rating">★★★★★</div>
                     <div class="product-actions">
@@ -259,14 +270,16 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=13'">
+            <div class="product" onclick="window.location.href='product-details.php?id=29'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Casual Hoodie">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Sweater">
+                    <div class="discount-badge">-60%</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Men's Casual Hoodie</h3>
+                    <h3 class="product-name">Men's Wool Sweater</h3>
                     <div class="product-price">
-                        <div class="current-price">$49.99</div>
+                        <div class="original-price">$89.99</div>
+                        <div class="current-price">$35.99</div>
                     </div>
                     <div class="product-rating">★★★★☆</div>
                     <div class="product-actions">
@@ -276,16 +289,18 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=14'">
+            <div class="product" onclick="window.location.href='product-details.php?id=30'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Cargo Pants">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Women's Dress">
+                    <div class="discount-badge">-70%</div>
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Men's Cargo Pants</h3>
+                    <h3 class="product-name">Women's Evening Dress</h3>
                     <div class="product-price">
-                        <div class="current-price">$59.99</div>
+                        <div class="original-price">$129.99</div>
+                        <div class="current-price">$38.99</div>
                     </div>
-                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-rating">★★★★★</div>
                     <div class="product-actions">
                         <button class="btn add-to-cart">Add to Cart</button>
                         <div class="wishlist">❤️</div>
@@ -326,12 +341,12 @@
                 <div class="footer-column">
                     <h3>Shopping</h3>
                     <ul class="footer-links">
-                        <li><a href="men.html">Men's Clothing</a></li>
-                        <li><a href="women.html">Women's Clothing</a></li>
-                        <li><a href="kids.html">Kid's Clothing</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="sale.html">Sale</a></li>
+                        <li><a href="men.php">Men's Clothing</a></li>
+                        <li><a href="women.php">Women's Clothing</a></li>
+                        <li><a href="kids.php">Kid's Clothing</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shop.php">New Arrivals</a></li>
+                        <li><a href="sale.php">Sale</a></li>
                     </ul>
                 </div>
                 
@@ -366,5 +381,30 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Countdown timer for sale
+        function updateCountdown() {
+            const now = new Date();
+            const endDate = new Date();
+            endDate.setDate(now.getDate() + 3); // Sale ends in 3 days
+            endDate.setHours(23, 59, 59); // End of day
+            
+            const diff = endDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>

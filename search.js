@@ -239,7 +239,7 @@ const products = [
       const searchBarHTML = `
               <div class="search-bar">
                   <div class="container">
-                      <form id="search-form" action="search.html" method="get">
+                      <form id="search-form" action="search.php" method="get">
                           <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                           <button type="submit" class="search-btn">Search</button>
                           <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -296,7 +296,7 @@ const products = [
             suggestion.innerHTML = highlightedName
   
             suggestion.addEventListener("click", () => {
-              window.location.href = `product-details.html?id=${product.id}`
+              window.location.href = `product-details.php?id=${product.id}`
             })
   
             searchSuggestions.appendChild(suggestion)
@@ -329,7 +329,7 @@ const products = [
     }
   
     // Handle search results page
-    if (window.location.pathname.includes("search.html")) {
+    if (window.location.pathname.includes("search.php")) {
       const urlParams = new URLSearchParams(window.location.search)
       const searchQuery = urlParams.get("q")
   
@@ -366,7 +366,7 @@ const products = [
             filteredProducts.forEach((product) => {
               const productElement = document.createElement("div")
               productElement.className = "product"
-              productElement.setAttribute("onclick", `window.location.href='product-details.html?id=${product.id}'`)
+              productElement.setAttribute("onclick", `window.location.href='product-details.php?id=${product.id}'`)
   
               productElement.innerHTML = `
                               <div class="product-image">

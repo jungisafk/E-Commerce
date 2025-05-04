@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sale | FASHION TRENDS</title>
+    <title>Kids Collection | FASHION TRENDS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,16 +18,16 @@
             
             <nav class="nav-links">
                 <a href="index.php">Home</a>
-                <a href="men.html">Men</a>
-                <a href="women.html">Women</a>
-                <a href="kids.html">Kids</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="sale.html" class="active">Sale</a>
+                <a href="men.php">Men</a>
+                <a href="women.php">Women</a>
+                <a href="kids.php" class="active">Kids</a>
+                <a href="accessories.php">Accessories</a>
+                <a href="sale.php">Sale</a>
             </nav>
             
             <div class="header-icons">
                 <div class="icon search-icon" onclick="toggleSearchBar()">🔍</div>
-                <div class="icon" onclick="window.location.href='account.php'">👤</div>
+                <div class="icon" onclick="window.location.href='login.php'">👤</div>
                 <div class="icon">💖</div>
                 <div class="icon" onclick="window.location.href='cart.php'">
                     🛒
@@ -39,7 +39,7 @@
         <!-- Search Bar -->
         <div class="search-bar">
             <div class="container">
-                <form id="search-form" action="search.html" method="get">
+                <form id="search-form" action="search.php" method="get">
                     <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
                     <button type="submit" class="search-btn">Search</button>
                     <div class="close-search" onclick="toggleSearchBar()">✕</div>
@@ -49,29 +49,11 @@
         </div>
     </header>
     
-    <!-- Sale Banner -->
-    <div class="category-banner sale-banner">
+    <!-- Kids Collection Banner -->
+    <div class="category-banner">
         <div class="container">
-            <h1>SALE</h1>
-            <p>Up to 70% off on selected items</p>
-            <div class="countdown-timer">
-                <div class="countdown-item">
-                    <div class="countdown-number" id="days">03</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="hours">12</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="minutes">45</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-number" id="seconds">30</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
+            <h1>Kids Collection</h1>
+            <p>Fun and comfortable clothing for your little ones</p>
         </div>
     </div>
     
@@ -90,8 +72,8 @@
                         <option>Featured</option>
                         <option>Price: Low to High</option>
                         <option>Price: High to Low</option>
-                        <option>Discount: High to Low</option>
                         <option>Customer Rating</option>
+                        <option>New Arrivals</option>
                     </select>
                 </div>
                 
@@ -108,23 +90,23 @@
                         <div class="filter-options">
                             <div class="filter-option">
                                 <input type="checkbox" id="category-all" checked>
-                                <label for="category-all">All Sale Items</label>
+                                <label for="category-all">All Kids Clothing</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-men">
-                                <label for="category-men">Men</label>
+                                <input type="checkbox" id="category-boys">
+                                <label for="category-boys">Boys</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-women">
-                                <label for="category-women">Women</label>
+                                <input type="checkbox" id="category-girls">
+                                <label for="category-girls">Girls</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-kids">
-                                <label for="category-kids">Kids</label>
+                                <input type="checkbox" id="category-toddlers">
+                                <label for="category-toddlers">Toddlers</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="category-accessories">
-                                <label for="category-accessories">Accessories</label>
+                                <input type="checkbox" id="category-babies">
+                                <label for="category-babies">Babies</label>
                             </div>
                         </div>
                     </div>
@@ -137,20 +119,20 @@
                                 <label for="price-all">All Prices</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-0-50">
-                                <label for="price-0-50">$0 - $50</label>
+                                <input type="checkbox" id="price-0-25">
+                                <label for="price-0-25">$0 - $25</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-50-100">
-                                <label for="price-50-100">$50 - $100</label>
+                                <input type="checkbox" id="price-25-50">
+                                <label for="price-25-50">$25 - $50</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-100-200">
-                                <label for="price-100-200">$100 - $200</label>
+                                <input type="checkbox" id="price-50-75">
+                                <label for="price-50-75">$50 - $75</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="price-200-plus">
-                                <label for="price-200-plus">$200+</label>
+                                <input type="checkbox" id="price-75-plus">
+                                <label for="price-75-plus">$75+</label>
                             </div>
                         </div>
                         
@@ -162,27 +144,40 @@
                     </div>
                     
                     <div class="filter-group">
-                        <h3>Discount</h3>
+                        <h3>Color</h3>
+                        <div class="color-options">
+                            <div class="color-option color-black" title="Black"></div>
+                            <div class="color-option color-white" title="White"></div>
+                            <div class="color-option color-red" title="Red"></div>
+                            <div class="color-option color-blue" title="Blue"></div>
+                            <div class="color-option color-green" title="Green"></div>
+                            <div class="color-option color-yellow" title="Yellow" style="background-color: yellow;"></div>
+                            <div class="color-option color-pink" title="Pink" style="background-color: pink;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Age</h3>
                         <div class="filter-options">
                             <div class="filter-option">
-                                <input type="checkbox" id="discount-10">
-                                <label for="discount-10">10% Off or More</label>
+                                <input type="checkbox" id="age-0-2">
+                                <label for="age-0-2">0-2 Years</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="discount-20">
-                                <label for="discount-20">20% Off or More</label>
+                                <input type="checkbox" id="age-3-5">
+                                <label for="age-3-5">3-5 Years</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="discount-30">
-                                <label for="discount-30">30% Off or More</label>
+                                <input type="checkbox" id="age-6-8">
+                                <label for="age-6-8">6-8 Years</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="discount-50">
-                                <label for="discount-50">50% Off or More</label>
+                                <input type="checkbox" id="age-9-12">
+                                <label for="age-9-12">9-12 Years</label>
                             </div>
                             <div class="filter-option">
-                                <input type="checkbox" id="discount-70">
-                                <label for="discount-70">70% Off or More</label>
+                                <input type="checkbox" id="age-13-16">
+                                <label for="age-13-16">13-16 Years</label>
                             </div>
                         </div>
                     </div>
@@ -192,18 +187,16 @@
             </div>
         </div>
         
-        <div class="shop-products grid-view" id="sale-products">
-            <!-- Sale Products -->
-            <div class="product" onclick="window.location.href='product-details.html?id=25'">
+        <div class="shop-products grid-view" id="kids-products">
+            <!-- Kids Products -->
+            <div class="product" onclick="window.location.href='product-details.php?id=8'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Polo Shirt">
-                    <div class="discount-badge">-30%</div>
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Cartoon T-Shirt">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Men's Polo Shirt</h3>
+                    <h3 class="product-name">Kids Cartoon T-Shirt</h3>
                     <div class="product-price">
-                        <div class="original-price">$39.99</div>
-                        <div class="current-price">$27.99</div>
+                        <div class="current-price">$19.99</div>
                     </div>
                     <div class="product-rating">★★★★☆</div>
                     <div class="product-actions">
@@ -213,16 +206,14 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=26'">
+            <div class="product" onclick="window.location.href='product-details.php?id=12'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Women's Cardigan">
-                    <div class="discount-badge">-40%</div>
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Winter Boots">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Women's Knit Cardigan</h3>
+                    <h3 class="product-name">Kids Winter Boots</h3>
                     <div class="product-price">
-                        <div class="original-price">$64.99</div>
-                        <div class="current-price">$38.99</div>
+                        <div class="current-price">$49.99</div>
                     </div>
                     <div class="product-rating">★★★★☆</div>
                     <div class="product-actions">
@@ -232,17 +223,49 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=27'">
+            <div class="product" onclick="window.location.href='product-details.php?id=18'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Sneakers">
-                    <div class="discount-badge">-25%</div>
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Denim Overalls">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Kids Colorful Sneakers</h3>
+                    <h3 class="product-name">Kids Denim Overalls</h3>
                     <div class="product-price">
-                        <div class="original-price">$39.99</div>
+                        <div class="current-price">$39.99</div>
+                    </div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=19'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Pajama Set">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kids Pajama Set</h3>
+                    <div class="product-price">
                         <div class="current-price">$29.99</div>
                     </div>
+                    <div class="product-rating">★★★★★</div>
+                    <div class="product-actions">
+                        <button class="btn add-to-cart">Add to Cart</button>
+                        <div class="wishlist">❤️</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product" onclick="window.location.href='product-details.php?id=20'">
+                <div class="product-image">
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids Raincoat">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Kids Colorful Raincoat</h3>
+                    <div class="product-price">
+                        <div class="current-price">$34.99</div>
+                    </div>
                     <div class="product-rating">★★★★☆</div>
                     <div class="product-actions">
                         <button class="btn add-to-cart">Add to Cart</button>
@@ -251,56 +274,16 @@
                 </div>
             </div>
             
-            <div class="product" onclick="window.location.href='product-details.html?id=28'">
+            <div class="product" onclick="window.location.href='product-details.php?id=21'">
                 <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Leather Wallet">
-                    <div class="discount-badge">-50%</div>
+                    <img src="/placeholder.svg?height=300&width=250" alt="Kids School Backpack">
                 </div>
                 <div class="product-info">
-                    <h3 class="product-name">Leather Wallet</h3>
+                    <h3 class="product-name">Kids School Backpack</h3>
                     <div class="product-price">
-                        <div class="original-price">$49.99</div>
                         <div class="current-price">$24.99</div>
                     </div>
-                    <div class="product-rating">★★★★★</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=29'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Men's Sweater">
-                    <div class="discount-badge">-60%</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Men's Wool Sweater</h3>
-                    <div class="product-price">
-                        <div class="original-price">$89.99</div>
-                        <div class="current-price">$35.99</div>
-                    </div>
                     <div class="product-rating">★★★★☆</div>
-                    <div class="product-actions">
-                        <button class="btn add-to-cart">Add to Cart</button>
-                        <div class="wishlist">❤️</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product" onclick="window.location.href='product-details.html?id=30'">
-                <div class="product-image">
-                    <img src="/placeholder.svg?height=300&width=250" alt="Women's Dress">
-                    <div class="discount-badge">-70%</div>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Women's Evening Dress</h3>
-                    <div class="product-price">
-                        <div class="original-price">$129.99</div>
-                        <div class="current-price">$38.99</div>
-                    </div>
-                    <div class="product-rating">★★★★★</div>
                     <div class="product-actions">
                         <button class="btn add-to-cart">Add to Cart</button>
                         <div class="wishlist">❤️</div>
@@ -341,12 +324,12 @@
                 <div class="footer-column">
                     <h3>Shopping</h3>
                     <ul class="footer-links">
-                        <li><a href="men.html">Men's Clothing</a></li>
-                        <li><a href="women.html">Women's Clothing</a></li>
-                        <li><a href="kids.html">Kid's Clothing</a></li>
-                        <li><a href="accessories.html">Accessories</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="sale.html">Sale</a></li>
+                        <li><a href="men.php">Men's Clothing</a></li>
+                        <li><a href="women.php">Women's Clothing</a></li>
+                        <li><a href="kids.php">Kid's Clothing</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shop.php">New Arrivals</a></li>
+                        <li><a href="sale.php">Sale</a></li>
                     </ul>
                 </div>
                 
@@ -381,30 +364,5 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-        // Countdown timer for sale
-        function updateCountdown() {
-            const now = new Date();
-            const endDate = new Date();
-            endDate.setDate(now.getDate() + 3); // Sale ends in 3 days
-            endDate.setHours(23, 59, 59); // End of day
-            
-            const diff = endDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
 </body>
 </html>

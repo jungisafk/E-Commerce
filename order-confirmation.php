@@ -17,19 +17,19 @@
             </div>
             
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Men</a>
-                <a href="shop.html">Women</a>
-                <a href="shop.html">Kids</a>
-                <a href="shop.html">Accessories</a>
-                <a href="shop.html">Sale</a>
+                <a href="index.php">Home</a>
+                <a href="shop.php">Men</a>
+                <a href="shop.php">Women</a>
+                <a href="shop.php">Kids</a>
+                <a href="shop.php">Accessories</a>
+                <a href="shop.php">Sale</a>
             </nav>
             
             <div class="header-icons">
                 <div class="icon">🔍</div>
-                <div class="icon" onclick="window.location.href='account.html'">👤</div>
+                <div class="icon" onclick="window.location.href='account.php'">👤</div>
                 <div class="icon">💖</div>
-                <div class="icon" onclick="window.location.href='cart.html'">
+                <div class="icon" onclick="window.location.href='cart.php'">
                     🛒
                     <span class="cart-count">0</span>
                 </div>
@@ -81,7 +81,7 @@
         <p style="margin: 30px 0;">A confirmation email has been sent to your email address.</p>
         
         <div style="margin-top: 30px;">
-            <a href="shop.html" class="btn">Continue Shopping</a>
+            <a href="shop.php" class="btn">Continue Shopping</a>
         </div>
     </div>
     
@@ -103,12 +103,12 @@
                 <div class="footer-column">
                     <h3>Shopping</h3>
                     <ul class="footer-links">
-                        <li><a href="shop.html">Men's Clothing</a></li>
-                        <li><a href="shop.html">Women's Clothing</a></li>
-                        <li><a href="shop.html">Kid's Clothing</a></li>
-                        <li><a href="shop.html">Accessories</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="shop.html">Sale</a></li>
+                        <li><a href="men.php">Men's Clothing</a></li>
+                        <li><a href="women.php">Women's Clothing</a></li>
+                        <li><a href="kids.php">Kid's Clothing</a></li>
+                        <li><a href="accessories.php">Accessories</a></li>
+                        <li><a href="shop.php">New Arrivals</a></li>
+                        <li><a href="sale.php">Sale</a></li>
                     </ul>
                 </div>
                 

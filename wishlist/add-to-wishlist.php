@@ -46,3 +46,7 @@ try {
     
     // Check if product is already in wishlist
     $stmt = $p
+    $stmt = $pdo->prepare("SELECT * FROM wishlist WHERE user_id = :user_id AND product_id = :product_id");
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt-> bindParam(':product_id', $product_id, PDO::PARAM_INT); 
+    $stmt->execute();
