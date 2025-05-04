@@ -1,0 +1,11 @@
+gh_binary_path: ''
+gh_token: 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
+available:
+  on_your_laptop: true
+  when_isolated: true
+confirmation:
+  ask_user:
+  - gh * delete *
+  - gh * close *
+  deny:
+  - gh auth token *

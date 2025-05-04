@@ -18,9 +18,9 @@
                     <li><a href="men.php">Men's Clothing</a></li>
                     <li><a href="women.php">Women's Clothing</a></li>
                     <li><a href="kids.php">Kid's Clothing</a></li>
-                    <li><a href="accessories.php">Accessories</a></li>
-                    <li><a href="shop.php">New Arrivals</a></li>
-                    <li><a href="sale.php">Sale</a></li>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="shop.html">New Arrivals</a></li>
+                    <li><a href="sale.html">Sale</a></li>
                 </ul>
             </div>
             
