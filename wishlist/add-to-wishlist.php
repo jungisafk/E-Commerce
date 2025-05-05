@@ -35,7 +35,7 @@ try {
     $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
     $stmt->execute();
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
-    
+
     if (!$product) {
         echo json_encode([
             'success' => false,
@@ -43,10 +43,35 @@ try {
         ]);
         exit;
     }
-    
+
     // Check if product is already in wishlist
-    $stmt = $p
     $stmt = $pdo->prepare("SELECT * FROM wishlist WHERE user_id = :user_id AND product_id = :product_id");
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $stmt-> bindParam(':product_id', $product_id, PDO::PARAM_INT); 
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
     $stmt->execute();
+    $wishlist_item = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($wishlist_item) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Product is already in your wishlist.'
+        ]);
+        exit;
+    }
+
+    // Add product to wishlist
+    $stmt = $pdo->prepare("INSERT INTO wishlist (user_id, product_id, created_at) VALUES (:user_id, :product_id, NOW())");
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    echo json_encode([
+        'success' => true,
+        'message' => 'Product added to your wishlist.'
+    ]);
+} catch (PDOException $e) {
+    echo json_encode([
+        'success' => false,
+        'message' => 'An error occurred: ' . $e->getMessage()
+    ]);
+}
