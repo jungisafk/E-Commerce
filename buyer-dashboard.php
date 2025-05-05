@@ -92,6 +92,231 @@ try {
     <!-- Dashboard -->
     <main>
         <div class="container">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buyer Dashboard | FASHION TRENDS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    
+<header>
+    <div class="container header-container">
+        <div class="logo"><a href="index.php" style="text-decoration: none; color: inherit;">FASHION<span>TRENDS</span></a></div>
+        
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            ☰
+        </div>
+        
+        <nav class="nav-links">
+            <a href="index.php" >Home</a>
+            <a href="men.php" >Men</a>
+            <a href="women.php" >Women</a>
+            <a href="kids.php" >Kids</a>
+            <a href="accessories.php" >Accessories</a>
+            <a href="sale.php" >Sale</a>
+        </nav>
+        
+        <div class="header-icons">
+            <div class="icon search-icon" onclick="toggleSearchBar()">🔍</div>
+            <div class="icon" onclick="window.location.href='buyer-dashboard.php'">
+                👤
+                                    <span class="user-badge buyer-badge">Buyer</span>
+                            </div>
+            <div class="icon" onclick="window.location.href='wishlist/add-to-wishlist.php'">💖</div>
+            <div class="icon" onclick="window.location.href='cart.php'">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="container">
+            <form id="search-form" action="search.php" method="get">
+                <input type="text" id="search-input" name="q" placeholder="Search for products..." autocomplete="off">
+                <button type="submit" class="search-btn">Search</button>
+                <div class="close-search" onclick="toggleSearchBar()">✕</div>
+            </form>
+            <div class="search-suggestions" id="search-suggestions"></div>
+        </div>
+    </div>
+</header>
+    
+    <!-- Dashboard -->
+    <main>
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="dashboard-sidebar">
+                    <div class="dashboard-user">
+                        <div class="user-avatar">JU</div>
+                        <div class="user-info">
+                            <div class="user-name">jung</div>
+                            <div class="user-role">Buyer</div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-menu">
+                        <a href="buyer-dashboard.php" class="dashboard-menu-item active">
+                            <span class="menu-icon"><i class="fas fa-home"></i></span>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="buyer-orders.php" class="dashboard-menu-item">
+                            <span class="menu-icon"><i class="fas fa-box"></i></span>
+                            <span>My Orders</span>
+                        </a>
+                        <a href="wishlist.php" class="dashboard-menu-item">
+                            <span class="menu-icon"><i class="fas fa-heart"></i></span>
+                            <span>Wishlist</span>
+                        </a>
+                        <a href="buyer-profile.php" class="dashboard-menu-item">
+                            <span class="menu-icon"><i class="fas fa-user"></i></span>
+                            <span>Profile</span>
+                        </a>
+                        <a href="auth/logout.php" class="dashboard-menu-item logout" onclick="return confirm('Are you sure you want to log out?')">
+                            <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span>Logout</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="dashboard-header">
+                        <h1 class="dashboard-title">My Dashboard</h1>
+                        <div class="dashboard-actions">
+                            <button class="btn" onclick="window.location.href='shop.php'">Continue Shopping</button>
+                        </div>
+                    </div>
+                    
+                                            <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
+                            Database error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'o.status' in 'field list'                        </div>
+                                        
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Orders</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                            <div class="stat-info">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Wishlist Items</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="recent-orders" style="margin-top: 40px;">
+                        <h2 class="section-title">Recent Orders</h2>
+                        
+                                                    <div style="text-align: center; padding: 30px; background-color: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                                <p>You haven't placed any orders yet.</p>
+                                <a href="shop.php" class="btn" style="margin-top: 15px;">Start Shopping</a>
+                            </div>
+                                                                </div>
+                                
+                                
+                                </div>
+                                </div>
+                                </div>
+                                </main>
+        <!-- Newsletter Section -->
+        <section class="section newsletter">
+    <div class="container">
+        <h2 class="section-title">Subscribe to Our Newsletter</h2>
+        <p class="section-subtitle">Get the latest updates on new products and upcoming sales</p>
+        
+        <form class="newsletter-form" action="process-newsletter.php" method="post">
+            <input type="email" name="email" placeholder="Your email address" class="newsletter-input" required>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+        <!-- Footer -->
+        <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>FASHION TRENDS</h3>
+                <p>Discover the latest fashion trends and get inspired by our collection of stylish clothing and accessories.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Shopping</h3>
+                <ul class="footer-links">
+                    <li><a href="men.php">Men's Clothing</a></li>
+                    <li><a href="women.php">Women's Clothing</a></li>
+                    <li><a href="kids.php">Kid's Clothing</a></li>
+                    <li><a href="accessories.php">Accessories</a></li>
+                    <li><a href="shop.php">New Arrivals</a></li>
+                    <li><a href="sale.php">Sale</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Information</h3>
+                <ul class="footer-links">
+                    <li><a href="about.php">About Us</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="faq.php">FAQs</a></li>
+                    <li><a href="terms.php">Terms & Conditions</a></li>
+                    <li><a href="privacy.php">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li>123 Fashion Street, New York, NY 10001</li>
+                    <li>Email: info@fashiontrends.com</li>
+                    <li>Phone: +1 (123) 456-7890</li>
+                    <li>Hours: Mon-Fri 9am-6pm</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 FASHION TRENDS. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Add Font Awesome for better icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- JavaScript -->
+<script>
+    // Function to toggle search bar
+    function toggleSearchBar() {
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.classList.toggle('active');
+        
+        if (searchBar.classList.contains('active')) {
+            document.getElementById('search-input').focus();
+        }
+    }
+</script>
+
+            <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+            <script src="script.js"></script>
+    </body>
+</html>
             <div class="dashboard-container">
                 <div class="dashboard-sidebar">
                     <div class="dashboard-user">
