@@ -119,7 +119,7 @@ try {
                             <span class="menu-icon"><i class="fas fa-user"></i></span>
                             <span>Profile</span>
                         </a>
-                        <a href="auth/logout.php" class="dashboard-menu-item">
+                        <a href="auth/logout.php" class="dashboard-menu-item logout" onclick="return confirm('Are you sure you want to log out?')">
                             <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span>
                             <span>Logout</span>
                         </a>
@@ -216,6 +216,7 @@ try {
                                                         <?php echo ucfirst($order['status']); ?>
                                                     </span>
                                                 </td>
+<<<<<<< HEAD
 
                                                 <td style="padding: 15px;"><?php echo $order['item_count']; ?> items</td>
                                                 <td style="padding: 15px;">$<?php echo number_format($order['total'], 2); ?></td>
@@ -305,4 +306,26 @@ try {
             <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
             <script src="script.js"></script>
     </body>
+=======
+                                                <td style="padding: 15px;"><?php echo $order['item_count']; ?></td>
+                                                <td style="padding: 15px;">$<?php echo number_format($order['total'], 2); ?></td>
+                                                <td style="padding: 15px;">
+                                                    <a href="order-details.php?id=<?php echo $order['id']; ?>" class="btn btn-outline">View</a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
+</body>
+>>>>>>> 0618f176a6899c451fc70083e596e1f799f2c00d
 </html>

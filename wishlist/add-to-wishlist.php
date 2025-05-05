@@ -12,7 +12,7 @@ header('Content-Type: application/json');
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     echo json_encode([
         'success' => false,
-        'message' => 'Please log in to add items to your wishlist.'
+        'message' => 'Please log in to manage your wishlist.'
     ]);
     exit;
 }
@@ -27,7 +27,8 @@ if (!isset($_POST['product_id'])) {
 }
 
 $product_id = intval($_POST['product_id']);
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['id']; // Use correct session key
+$action = isset($_POST['action']) ? $_POST['action'] : 'toggle'; // add, remove, or toggle
 
 try {
     // Check if product exists
@@ -51,27 +52,59 @@ try {
     $stmt->execute();
     $wishlist_item = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($wishlist_item) {
-        echo json_encode([
-            'success' => false,
-            'message' => 'Product is already in your wishlist.'
-        ]);
+    if ($action === 'remove' || ($action === 'toggle' && $wishlist_item)) {
+        // Remove from wishlist if exists
+        if ($wishlist_item) {
+            $stmt = $pdo->prepare("DELETE FROM wishlist WHERE user_id = :user_id AND product_id = :product_id");
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+            $stmt->execute();
+            echo json_encode([
+                'success' => true,
+                'action' => 'removed',
+                'message' => 'Product removed from your wishlist.'
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Product was not in your wishlist.'
+            ]);
+        }
         exit;
     }
 
-    // Add product to wishlist
-    $stmt = $pdo->prepare("INSERT INTO wishlist (user_id, product_id, created_at) VALUES (:user_id, :product_id, NOW())");
-    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
-    $stmt->execute();
+    if ($action === 'add' || ($action === 'toggle' && !$wishlist_item)) {
+        // Add to wishlist if not already present
+        if (!$wishlist_item) {
+            $stmt = $pdo->prepare("INSERT INTO wishlist (user_id, product_id, created_at) VALUES (:user_id, :product_id, NOW())");
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+            $stmt->execute();
+            echo json_encode([
+                'success' => true,
+                'action' => 'added',
+                'message' => 'Product added to your wishlist.'
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Product is already in your wishlist.'
+            ]);
+        }
+        exit;
+    }
 
+    // If action is not recognized
     echo json_encode([
-        'success' => true,
-        'message' => 'Product added to your wishlist.'
+        'success' => false,
+        'message' => 'Invalid action.'
     ]);
+    exit;
+
 } catch (PDOException $e) {
     echo json_encode([
         'success' => false,
         'message' => 'An error occurred: ' . $e->getMessage()
     ]);
+    exit;
 }
